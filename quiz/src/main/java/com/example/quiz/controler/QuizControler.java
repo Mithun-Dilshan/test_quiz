@@ -23,6 +23,7 @@ import com.example.quiz.service.QuizService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
+//hello
 
 public class QuizControler {
 
