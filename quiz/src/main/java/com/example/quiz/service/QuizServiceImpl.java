@@ -65,7 +65,7 @@ public class QuizServiceImpl implements QuizService{
     public void deleteQuiz(String id){
         quizRepositary.deleteById(id);
     }
-
+//test
   
     @Override
     public Map<String, List<Quiz>> getQuizzesByBank() {
