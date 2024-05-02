@@ -18,7 +18,5 @@ public class Quiz {
     private  String answer;
     private String type;
 
-
-
     
 }

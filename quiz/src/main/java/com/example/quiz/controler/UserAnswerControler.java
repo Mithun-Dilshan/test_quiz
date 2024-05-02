@@ -6,15 +6,19 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.quiz.entity.UserAnswer;
 
 import com.example.quiz.service.UserAnswerService;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:3000")
 
 public class UserAnswerControler {
 
@@ -27,12 +31,12 @@ public class UserAnswerControler {
     public UserAnswerControler(UserAnswerService UserAnswerService){
         this.userAnswerService =userAnswerService;
     } 
-    @GetMapping("/UserAnswer")
+    @GetMapping("/useranswer")
     public ResponseEntity<List<UserAnswer>> getAllUserAnswer(){
         return ResponseEntity.status(HttpStatus.OK).body(userAnswerService.getAllUserAnswer());
     }
 
-    @GetMapping("/UserAnswer/{id}")
+    @GetMapping("/useranswer/{id}")
     public ResponseEntity<UserAnswer> getUserAnswerById(@PathVariable String id){
         try {
             UserAnswer userAnswer =userAnswerService.getUserAnswerById(id);
@@ -47,7 +51,7 @@ public class UserAnswerControler {
         }
     }
     
-    @PostMapping("/UserAnswer")
+    @PostMapping("/useranswer")
     public ResponseEntity<UserAnswer>creatUserAnswer(@RequestBody UserAnswer userAnswer  ){
         try {
             System.out.println("ok");

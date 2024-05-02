@@ -18,17 +18,18 @@ public class UserAnswerServiceImpl implements UserAnswerService {
         this.userAnsweRepositary = userAnsweRepositary;
     }
 
+    @Override
     public List<UserAnswer> getAllUserAnswer() {
         return userAnsweRepositary.findAll();
     }
 
     @Override
-    public UserAnswer getUserAnswer(String id) {
+    public UserAnswer getUserAnswerById(String id) {
         return userAnsweRepositary.findById(id).orElseThrow(() -> new NoSuchElementException("User not found: " + id));
     }
 
     @Override
-    public UserAnswer createUserAnswer(UserAnswer userAnswer) {
+    public UserAnswer creatUserAnswer(UserAnswer userAnswer) {
         return userAnsweRepositary.save(userAnswer);
     }
 }

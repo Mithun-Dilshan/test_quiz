@@ -82,7 +82,8 @@ public class QuizServiceImpl implements QuizService{
             List<Quiz> quizzes = entry.getValue();
             Collections.shuffle(quizzes); // Shuffle the quizzes to get them randomly
             quizzesByBank.put(entry.getKey(), quizzes.subList(0, Math.min(5, quizzes.size())));
-        }
+        } 
+        
     
 
         return quizzesByBank;
